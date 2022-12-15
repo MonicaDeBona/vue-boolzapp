@@ -1,4 +1,58 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROOT */
+:root{
+    --main-bg-color1: #dadbd2;
+    --main-bg-color2:#009688;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    height: 100vh;
+}
+
+.upper-bg {
+    background-color: var(--main-bg-color2);
+    height: 15%;
+}
+
+.lower-bg {
+    background-color: var(--main-bg-color1);
+    height: 85%;
+}
+
+#my-app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.content {
+    max-width: 85vw;
+    height: 94vh;
+    margin: 3vh auto;
+    display: flex;
+}
+
+#contacts {
+    height: 100%;
+    width: 35%;
+    background-color: #eaeaea;
+}
+
+#chat {
+    height: 100%;
+    width: 65%;
+    background-color: #e3dbd3;
 }
