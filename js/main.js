@@ -9,7 +9,6 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            avatarStyle: 'avatar-style',
             currentContact: 0,
             contacts: [
                 {
