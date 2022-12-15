@@ -12,7 +12,7 @@
 }
 
 /* COMMON */
-.flex {
+.d-flex {
     display: flex;
 }
 
@@ -78,7 +78,6 @@ main {
     height: 100%;
     width: 35%;
     background-color: #eaeaea;
-    padding: 1rem 0 0 1rem;
 }
 
 #chat {
@@ -91,6 +90,7 @@ main {
 /* SECTION CONTACT */
 .user-bar {
     height: 7%;
+    padding: 1rem 1rem;
 }
 
 .main-user img {
@@ -99,14 +99,84 @@ main {
     height: 50px;
 }
 
+.icons i {
+    color: #b1b1b1;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+
+
+
 .notifications {
     height: 10%;
+    background-color: #8edafc;
+    padding: 1rem 1rem;
 }
+
+.bell {
+    background-color: white;
+    margin-right: 1rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.fa-bell-slash {
+    color: #8edafc;
+    font-size: 1.5rem;
+}
+
+.underline {
+    text-decoration: underline;
+    color:  #b1b1b1;
+    font-size: .9rem;
+}
+
+
+
+
+
+
 
 .search-bar {
     height: 5%;
+    padding: 0 1rem 0;
+}
+
+.search-bar-container {
+    border-radius: 5px;
+    background-color: white;
+    height: 90%;
+    margin: .2rem 0;
+}
+
+.fa-magnifying-glass {
+    font-size: 1.5rem;
+    color:  #b1b1b1;
+    padding: 0 1rem;
+}
+
+#search {
+    width: 95%;
+    border: none;
 }
 
 .chat-list {
     height: 78%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.card {
+    padding: 1rem 0 0 1rem;
+}
+
+.avatar-style {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.contact-text {
+    padding-left: 1rem;
 }
