@@ -11,6 +11,35 @@
     --main-bg-color2:#009688;
 }
 
+/* COMMON */
+.flex {
+    display: flex;
+}
+
+.f-wrap {
+    flex-wrap: wrap;
+}
+
+.f-between{
+    justify-content: space-between;
+}
+
+.f-column{
+    flex-direction: column;
+}
+
+.f-align-center{
+    align-items: center;
+}
+
+.f-end{
+    justify-content: flex-end;
+}
+
+.f-justify-center {
+    justify-content: center;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -49,10 +78,35 @@ main {
     height: 100%;
     width: 35%;
     background-color: #eaeaea;
+    padding: 1rem 0 0 1rem;
 }
 
 #chat {
     height: 100%;
     width: 65%;
     background-color: #e3dbd3;
+}
+
+
+/* SECTION CONTACT */
+.user-bar {
+    height: 7%;
+}
+
+.main-user img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.notifications {
+    height: 10%;
+}
+
+.search-bar {
+    height: 5%;
+}
+
+.chat-list {
+    height: 78%;
 }
