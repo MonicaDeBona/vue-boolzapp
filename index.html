@@ -63,34 +63,48 @@
                                 </div>
                             </div>
                             <div class="chat-list">
-                                <div class="card d-flex" v-for="(contact, index) in contacts" @click="setCurrentContact(index)">
-                                    <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" :class="avatarStyle">
-                                    <div class="contact-text d-flex f-column">
-                                        <h4>
-                                            {{contact.name}}
-                                        </h4>
-                                        <p>Ultimo messaggio inviato</p>
+                                <div class="card d-flex f-between" v-for="(contact, index) in contacts" @click="setCurrentContact(index)">
+                                    <div class="contact-container d-flex">
+                                        <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" :class="avatarStyle">
+                                        <div class="contact-text d-flex f-column">
+                                            <h4>
+                                                {{contact.name}}
+                                            </h4>
+                                            <p>Ultimo messaggio inviato</p>
+                                        </div>
+                                    </div>
+                                    <div class="access">
+                                        <p>12.00</p>
                                     </div>
                                 </div>
                             </div>
                         </section>
                         <section id="chat" class="d-flex f-column">
                             <div class="chat-bar d-flex f-align-center f-between">
-                                <figure>
-                                    <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" :class="avatarStyle">
-                                </figure>
-                                <h4>
-                                    {{contacts[currentContact].name}}
-                                </h4>
+                                <div class="contact-chat-info d-flex f-align-center">
+                                    <figure>
+                                        <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" :class="avatarStyle">
+                                    </figure>
+                                    <div class="contact-chat-text">
+                                        <h4>
+                                            {{contacts[currentContact].name}}
+                                        </h4>
+                                        <p>
+                                            Ultimo accesso oggi alle 12.00
+                                        </p>
+                                    </div>
+                                </div>
                                 <div class="icons">
                                     <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                                     <a href="#"><i class="fa-solid fa-paperclip"></i></a>
                                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                                 </div>
                             </div>
-                            <div class="main-chat">
-                                <div v-for="(message, index) in contacts[currentContact].messages">
-                                    {{message.message}}
+                            <div class="main-chat d-flex f-column">
+                                <div v-for="message in contacts[currentContact].messages" :class="message.status === 'sent' ? 'sent' : 'received'">
+                                    <p>
+                                        {{message.message}}
+                                    </p>
                                 </div>
                             </div>
                             <div class="chat-input d-flex f-between f-align-center">

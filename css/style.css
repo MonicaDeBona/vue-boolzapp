@@ -173,14 +173,16 @@ main {
     height: 78%;
     background-color: white;
     overflow-y: scroll;
+    padding-right: 1rem;
 }
 
 .card {
     padding: 1rem 0 0 1rem;
 }
 
-.card p {
-    color:  #b1b1b1;
+.card p,
+.contact-chat-text p {
+    color:  #8d8f90;
     font-size: .9rem;
 }
 
@@ -202,6 +204,7 @@ main {
     background-color: var(--chat-color);
     height: 85%;
     overflow-y: scroll;
+    padding: 2rem;
 }
 
 .chat-input {
@@ -221,3 +224,21 @@ main {
     border-radius: 5px;
     padding-left: 1rem;
 }
+
+.sent {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+    border-radius: 5px;
+    padding: .7rem;
+    margin-bottom: .5rem;
+    width: 40%;
+}
+
+.received {
+    background-color: white;
+    border-radius: 5px;
+    padding: .7rem;
+    margin-bottom: .5rem;
+    width: 40%;
+}
+
