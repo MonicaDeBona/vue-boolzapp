@@ -10,6 +10,7 @@ createApp({
     data(){
         return{
             avatarStyle: 'avatar-style',
+            currentContact: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +175,12 @@ createApp({
                 }
             ]
             
+        }
+    },
+
+    methods:{
+        setCurrentContact(current){
+            this.currentContact = current;
         }
     }
 }).mount("#app")

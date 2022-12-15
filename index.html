@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="chat-list">
-                                <div class="card d-flex" v-for="(contact, index) in contacts">
+                                <div class="card d-flex" v-for="(contact, index) in contacts" @click="setCurrentContact(index)">
                                     <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" :class="avatarStyle">
                                     <div class="contact-text d-flex f-column">
                                         <h4>
@@ -77,10 +77,10 @@
                         <section id="chat" class="d-flex f-column">
                             <div class="chat-bar d-flex f-align-center f-between">
                                 <figure>
-                                            
+                                    <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" :class="avatarStyle">
                                 </figure>
                                 <h4>
-                                    
+                                    {{contacts[currentContact].name}}
                                 </h4>
                                 <div class="icons">
                                     <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -89,7 +89,9 @@
                                 </div>
                             </div>
                             <div class="main-chat">
-                                
+                                <div v-for="(message, index) in contacts[currentContact].messages">
+                                    {{message.message}}
+                                </div>
                             </div>
                             <div class="chat-input d-flex f-between f-align-center">
                                 <i class="fa-regular fa-face-smile"></i>
