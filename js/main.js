@@ -199,12 +199,15 @@ createApp({
                     message: this.newMsg,
                     status: 'sent'
                 });
-                this.contacts[this.currentContact].messages.push ({
-                    date: '16/12/2022 11:50:00',
-                    message: this.newReply,
-                    status: 'received'
-                });
+                setTimeout(() => {
+                    this.contacts[this.currentContact].messages.push ({
+                        date: '16/12/2022 11:50:00',
+                        message: 'ok',
+                        status: 'received'
+                    });
+                }, 1000);
             }
         },
+
     }
 }).mount("#app")
