@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="chat-list">
-                                <div class="card d-flex f-between" v-for="(contact, index) in contacts" @click="setCurrentContact(index)">
+                                <div class="card d-flex f-between" v-for="(contact, index) in contacts" @click="setCurrentContact(index)" v-show="contact.visible">
                                     <div class="contact-container d-flex">
                                         <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" :class="'avatar-style'">
                                         <div class="contact-text d-flex f-column">
