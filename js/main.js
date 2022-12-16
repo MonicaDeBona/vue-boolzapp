@@ -10,6 +10,7 @@ createApp({
     data(){
         return{
             currentContact: 0,
+            newMsg : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -180,6 +181,17 @@ createApp({
     methods:{
         setCurrentContact(current){
             this.currentContact = current;
+        },
+
+        addNewMsg() {
+            msg = {
+                date: '16/12/2022 11:50:00',
+                text: 'newMsg',
+                status: 'sent'
+            }
+            this.contacts[this.currentContact].message.push(msg);
+            this.newMsg = '';
         }
+
     }
 }).mount("#app")
