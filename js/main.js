@@ -184,14 +184,16 @@ createApp({
         },
 
         addNewMsg() {
-            msg = {
-                date: '16/12/2022 11:50:00',
-                text: 'newMsg',
-                status: 'sent'
+            if (this.newMsg != '' && this.newMsg.length > 0) {
+                this.contacts[this.currentContact].messages.push ({
+                    date: '16/12/2022 11:50:00',
+                    text: this.newMsg,
+                    status: 'sent'
+                });
             }
-            this.contacts[this.currentContact].message.push(msg);
             this.newMsg = '';
-        }
+        },
+
 
     }
 }).mount("#app")
