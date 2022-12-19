@@ -99,10 +99,13 @@
                     </div>
                 </div>
                 <div class="chat d-flex f-column">
-                    <div v-for="message in contacts[currentContact].messages" :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
+                    <div class="d-flex f-between" v-for="message in contacts[currentContact].messages" :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
                         <p>
                             {{message.message}}
                         </p>
+                        <a>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="message-input d-flex f-align-center f-around">
