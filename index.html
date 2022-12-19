@@ -47,7 +47,7 @@
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="text">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p class="t-black">Ricevi notifiche di nuovi messaggi</p>
                         <p class="underline">Attiva notifiche desktop</p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="contacts-list">
-                    <div class="contact d-flex"  v-for="(contact, index) in contacts" @click="setCurrentContact(index)" v-show="contact.visible">
+                    <div class="contact d-flex"  v-for="(contact, index) in contacts" @click="setCurrentContact(index)" v-show="contact.visible" :class="(currentContact === index) ? 'active' : ''">
                         <div class="profile-picture">
                             <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                         </div>
@@ -105,7 +105,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="message-input d-flex f-between f-align-center">
+                <div class="message-input d-flex f-align-center f-around">
                     <i class="fa-regular fa-face-smile"></i>
                     <input type="text" placeholder="Scrivi un messaggio" class="text-bar" v-model="newMsg" @keyup.enter="addNewMsg">
                     <i class="fa-solid fa-microphone"></i>
