@@ -47,8 +47,8 @@
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
                     <div class="text">
-                        <p class="t-black">Ricevi notifiche di nuovi messaggi</p>
-                        <p class="underline">Attiva notifiche desktop</p>
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p class="underline t-gray">Attiva notifiche desktop</p>
                     </div>
                 </div>
                 <div class="contact-searchbar topbar ">
@@ -69,7 +69,7 @@
                             <h4>
                                 {{contact.name}}
                             </h4>
-                            <p>
+                            <p :class="'t-gray'">
                                 Ultimo messaggio inviato
                             </p>
                         </div>
@@ -87,7 +87,7 @@
                             <h4>
                                 {{contacts[currentContact].name}}
                             </h4>
-                            <p>
+                            <p :class="'t-gray'">
                                 Ultimo accesso oggi alle 12.00
                             </p>
                         </div>

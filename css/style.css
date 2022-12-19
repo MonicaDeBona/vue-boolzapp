@@ -30,8 +30,8 @@
     justify-content: center;
 }
 
-.t-black {
-    color: black;
+.t-gray {
+    color: #b1b1b1;
 }
 
 .underline {
@@ -79,7 +79,6 @@ div.user-profile-info {
     height: 100%;
 }
 
-p,
 .icons i {
     color: #b1b1b1;
 }
@@ -179,6 +178,7 @@ div.chat {
     width: 100%;
     background-image: url('../img/mine.jpg');
     padding: 1.5rem 2.5rem;
+    overflow-y: scroll;
 }
 
 div.message-input {
