@@ -10,113 +10,109 @@
         <!-- Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
         <!-- Awesome font -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        
-        <!-- importing bootstrap v5.2 -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
         <!-- custom style css -->
         <link rel="stylesheet" href="./css/style.css" />
     </head>
 
-    <body>
+    <body class="d-flex">
 
-        <div id="app">
+        <div id="app" class="d-flex">
 
-            <main>
-                <div class="upper-bg"></div>
-                <div class="lower-bg"></div>
-                <div id="my-app">
-                    <div class="content">
-                        <section id="contacts" class="d-flex f-column">
-                            <div class="user-bar d-flex f-between f-align-center">
-                                <div class="main-user d-flex f-align-center">
-                                    <figure>
-                                        <img src="img/avatar_io.jpg" alt="User Avatar" class="avatar-style">
-                                    </figure>
-                                    <h4>
-                                        Sofia
-                                    </h4>
-                                </div>
-                                <div class="icons">
-                                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
-                                    <a href="#"><i class="fa-solid fa-message"></i></a>
-                                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                                </div>
-                            </div>
-                            <div class="notifications d-flex f-align-center">
-                                <div class="bell">
-                                    <i class="fa-solid fa-bell-slash"></i>
-                                </div>
-                                <div class="text">
-                                    <p>Ricevi notifiche di nuovi messaggi</p>
-                                    <p class="underline">Attiva notifiche desktop</p>
-                                </div>
-                            </div>
-                            <div class="search-bar">
-                                <div class="search-bar-container d-flex f-align-center">
-                                    <i class="fa-solid fa-magnifying-glass magnifying-glass-custom"></i>
-                                    <input type="search" id="search" placeholder="Cerca o inizia una nuova chat" v-model="searchUser" @keyup.enter="filteredSearch">
-                                </div>
-                            </div>
-                            <div class="chat-list">
-                                <div class="card d-flex f-between" v-for="(contact, index) in contacts" @click="setCurrentContact(index)" v-show="contact.visible">
-                                    <div class="contact-container d-flex">
-                                        <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" :class="'avatar-style'">
-                                        <div class="contact-text d-flex f-column">
-                                            <h4>
-                                                {{contact.name}}
-                                            </h4>
-                                            <p>Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="access">
-                                        <p>12.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="chat" class="d-flex f-column">
-                            <div class="chat-bar d-flex f-align-center f-between">
-                                <div class="contact-chat-info d-flex f-align-center">
-                                    <figure>
-                                        <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" :class="'avatar-style'">
-                                    </figure>
-                                    <div class="contact-chat-text">
-                                        <h4>
-                                            {{contacts[currentContact].name}}
-                                        </h4>
-                                        <p>
-                                            Ultimo accesso oggi alle 12.00
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="icons">
-                                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                                    <a href="#"><i class="fa-solid fa-paperclip"></i></a>
-                                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                                </div>
-                            </div>
-                            <div class="main-chat d-flex f-column">
-                                <div v-for="message in contacts[currentContact].messages" :class="message.status === 'sent' ? 'sent' : 'received'">
-                                    <p>
-                                        {{message.message}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="chat-input d-flex f-between f-align-center">
-                                <i class="fa-regular fa-face-smile"></i>
-                                <input type="text" placeholder="Scrivi un messaggio" class="text-bar" v-model="newMsg" @keyup.enter="addNewMsg">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
-                        </section>
-                        
+        <main class="wrapper d-flex">
+
+            <section id="left-content">
+
+                <div class="topbar user-profile d-flex f-between f-align-center">
+                    <div class="user-profile-info d-flex f-align-center">
+                        <figure class="profile-picture">
+                            <img src="img/avatar_io.jpg" alt="User Avatar">
+                        </figure>
+                        <h4>
+                            Sofia
+                        </h4>
+                    </div>
+                    <div class="icons">
+                        <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                        <a href="#"><i class="fa-solid fa-message"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </div>
-            </main>
+                <div class="notifications d-flex f-align-center">
+                    <div class="bell">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="text">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <p class="underline">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+                <div class="contact-searchbar topbar ">
+                    <div class="searchbar-container d-flex f-align-center">
+                        <label for="search" class="label-search d-flex f-justify-center f-align-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <input type="search" id="search" placeholder="Cerca o inizia una nuova chat" v-model="searchUser" @keyup.enter="filteredSearch">
+                    </div>
+                </div>
+
+                <div class="contacts-list">
+                    <div class="contact d-flex"  v-for="(contact, index) in contacts" @click="setCurrentContact(index)" v-show="contact.visible">
+                        <div class="profile-picture">
+                            <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                        </div>
+                        <div class="contact-detail">
+                            <h4>
+                                {{contact.name}}
+                            </h4>
+                            <p>
+                                Ultimo messaggio inviato
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="right-content">
+                <div class="topbar selected-contact d-flex f-align-center f-between">
+                    <div class="contact-chat-info d-flex f-align-center">
+                        <figure>
+                            <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" :class="'profile-picture'">
+                        </figure>
+                        <div class="contact-chat-text">
+                            <h4>
+                                {{contacts[currentContact].name}}
+                            </h4>
+                            <p>
+                                Ultimo accesso oggi alle 12.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </div>
+                </div>
+                <div class="chat d-flex f-column">
+                    <div v-for="message in contacts[currentContact].messages" :class="message.status === 'sent' ? 'message-sent' : 'message-received'">
+                        <p>
+                            {{message.message}}
+                        </p>
+                    </div>
+                </div>
+                <div class="message-input d-flex f-between f-align-center">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio" class="text-bar" v-model="newMsg" @keyup.enter="addNewMsg">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </section>
+
+        </main>
 
         </div>
 
